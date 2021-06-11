@@ -5,3 +5,5 @@ node_modules
 lib
 .merlin
 .bsb.lock
+build/bundle.js
+build/index.html
