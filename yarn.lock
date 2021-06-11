@@ -2280,6 +2280,11 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
   integrity sha1-Cr9PHKpbyx96nYrMbepPqqBLrJs=
 
+esy@^0.6.10:
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/esy/-/esy-0.6.10.tgz#918de2ad7e40793978c63b8216563408527cc25e"
+  integrity sha512-O+mWNPB9NJqDr3CA1PUbWUO1ZSy53ksZWivGrvbquATR5INlp3CYguwkq4BzZACg1s1bVYyhr7byjB/l1nuGRA==
+
 etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
