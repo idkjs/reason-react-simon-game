@@ -49,11 +49,13 @@ type action =
 
 [@react.component]
 let make = () => {
-  let (_state, send) =
-    ReactUpdate.useReducer({sequence: [||]}, (action, _state) =>
-      switch (action) {
-      | SetSequence(array) => Update({sequence: array})
-      }
+  let (_state, dispatch) =
+    React.useReducer(
+      (_state, action) =>
+        switch (action) {
+        | SetSequence(array) => {sequence: array}
+        },
+      {sequence: [||]},
     );
 
   React.useEffect0(() => {
@@ -61,7 +63,7 @@ let make = () => {
       Belt.Array.makeBy(20, _i =>
         Js.Math.floor(Js.Math.random() *. 4.0 +. 1.0)
       );
-    send(SetSequence(array));
+    dispatch(SetSequence(array));
     None;
   });
 
