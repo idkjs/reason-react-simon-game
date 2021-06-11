@@ -1,9 +1,13 @@
+// type t;
+// [@bs.new] external make: string => t = "Audio";
+// [@bs.send] external play: t => unit = "play";
 class type audioInstance =
   [@bs]
   {
     pub play: unit => unit;
   };
 
-type tAudio = Js.t(audioInstance);
+type t = Js.t(audioInstance);
 
-[@bs.new] external createAudio: string => tAudio = "Audio";
+[@bs.new] external make: string => t = "Audio";
+[@bs.send] external play: t => unit = "play";

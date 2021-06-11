@@ -8,5 +8,6 @@
       "in-source": false
     }
   ],
-  "bs-dependencies": [ "reason-react", "bs-css", "bs-css-emotion", "bs-webapi" ]
+  "suffix": ".bs.js",
+  "bs-dependencies": [ "reason-react", "bs-css", "bs-css-emotion" ]
 }
