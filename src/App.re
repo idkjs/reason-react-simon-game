@@ -1,12 +1,12 @@
 open Webapi.Dom;
 
-type sequence = list(Types.colors);
+type sequence = list(Colorz.colors);
 
 type state = {
   sequence,
   level: int,
-  active: option(Types.colors),
-  input: list(Types.colors),
+  active: option(Colorz.colors),
+  input: list(Colorz.colors),
   isStrict: bool,
   isPlaying: bool,
 };
@@ -14,9 +14,9 @@ type state = {
 type action =
   | SetSequence(sequence)
   | PlaySequence
-  | PlaySound(Types.colors)
+  | PlaySound(Colorz.colors)
   | ResetColor
-  | Input(Types.colors)
+  | Input(Colorz.colors)
   | CheckInput
   | Reset
   | SetStrictness
@@ -28,8 +28,8 @@ module Styles = {
   global(
     "body",
     [
-      fontFamily(
-        "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+     fontFamily(
+        `custom("-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"),
       ),
     ],
   );
@@ -51,7 +51,7 @@ module Styles = {
       maxHeight(`px(500)),
     ]);
 
-  let box = (~bgColor: Types.colors, ~active: option(Types.colors)) => {
+  let box = (~bgColor: Colorz.colors, ~active: option(Colorz.colors)) => {
     let baseStyle = [
       minHeight(`px(250)),
       minWidth(`px(250)),
@@ -86,7 +86,7 @@ let makeSequence = (~len=5, ()) =>
   Belt.List.makeBy(
     len,
     _i => {
-      open Types;
+      open Colorz;
       let num = Js.Math.floor(Js.Math.random() *. 4.0 +. 1.0);
       switch (num) {
       | 1 => Green

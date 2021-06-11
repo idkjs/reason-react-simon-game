@@ -1,4 +1,4 @@
-open Types;
+open Colorz;
 
 let green =
   Audio.createAudio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
